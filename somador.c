@@ -56,7 +56,10 @@ int main (int argc, char *argv[]){//Recebe duas strings como argumento
 	int carryOut = 0; //O carry, com valor inicial 0, já que ainda não foi feita nenhuma operação
 	int sum1, sum2, sum3, sum4, sum5=0; //Variáveis que armazenarão o valor da soma bit-a-bit
 
-	/*Aqui acontecerá a "separação" dos bits de cada número inserido, pegando o resto da divisão do inteiro por 10 (Que é, na prática, o último algarismo do número) e depois dividindo por 10 para retirar o algarismo que já está armazenado na variável. Fazendo isso sucessivamente, obtém-se todos os bits dos dois números de entrada*/
+	/*Aqui acontecerá a "separação" dos bits de cada número inserido, pegando o resto da divisão do inteiro por 10
+	(Que é, na prática, o último algarismo do número)
+	e depois dividindo por 10 para retirar o algarismo que já está armazenado na variável.
+	Fazendo isso sucessivamente, obtém-se todos os bits dos dois números de entrada*/
 
 	bit1 = numb1%10;
 	numb1 /= 10;
@@ -88,8 +91,11 @@ int main (int argc, char *argv[]){//Recebe duas strings como argumento
 	Os parâmetros passados são: O primeiro bit do primeiro número, o primeiro bit do segundo número e o carry*/
 	sum1 = circuito(bit1, bit5, carryOut);
 	carryOut = calcCarry(bit1, bit5, carryOut); //Cálculo do valor do carry depois dessa operação
-
-	sum2 = circuito(bit2, bit6, carryOut); //Mesma coisa que a situação de cima, só que desta vez com o segundo bit de cada número e assim sucessivamente nas funções seguintes.
+	
+	/*Mesma coisa que a situação de cima só que desta vez com o segundo bit de cada número.
+	Assim sucessivamente nas funções seguintes*/
+	
+	sum2 = circuito(bit2, bit6, carryOut);
 	carryOut = calcCarry(bit2, bit6, carryOut);
 
 	sum3 = circuito(bit3, bit7, carryOut);
